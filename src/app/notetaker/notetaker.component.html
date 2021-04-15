@@ -1,0 +1,16 @@
+<h1>Note Taker</h1>
+<mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       Add Notes
+      </mat-panel-title>
+     
+    </mat-expansion-panel-header>
+    <div>
+        Note Tittle: <input type="text" name="txtnote" (change)="onChangeText($event)" [value]="noteTittle" [style.background-color]="textbg" placeholder="note title">
+    </div>
+    <div>
+        Note Description: <input type="text" name="txtdesc" (change)="onChangeText($event)" [value]="noteDesc" [style.background-color]="textbg" placeholder="note dsc">
+    </div>
+    <button type="submit" (click)="addNotes()">Save</button>
+</mat-expansion-panel>
