@@ -28,13 +28,14 @@
     <mat-card-header>
       <mat-card-title>{{note.title}}</mat-card-title>      
     </mat-card-header>
-  
+    <img mat-card-image src="../../assets/images/nokia.png" alt="Photo of a Shiba Inu">
+
     <mat-card-content>
       {{note.desc}}
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>LIKE</button>
       <button mat-button>SHARE</button>
-      <button mat-button (click)="deleteNotes(note.id)">DELETE</button>
+      <button mat-button >DELETE</button>
     </mat-card-actions>
   </mat-card>

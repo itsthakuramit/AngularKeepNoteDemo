@@ -21,6 +21,8 @@ import {MatCardModule} from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NotesService } from './services/notes.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -30,7 +32,9 @@ import { NotesService } from './services/notes.service';
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
-    NotetakerComponent
+    NotetakerComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
