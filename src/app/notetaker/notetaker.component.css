@@ -6,3 +6,12 @@ mat-expansion-panel{
 div{
     margin: 10px;
 }
+
+.example-card {
+    max-width: 200px;
+    display: inline-flex;
+    margin-top: 20px;
+    margin: 20px;
+    flex-direction: column;
+  }
+  

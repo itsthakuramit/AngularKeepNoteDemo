@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { title } from 'node:process';
-class Note {
-  title: string = '';
-  desc: string = '';
-}
+import { Notes } from '../models/notes';
+import { NotesService } from '../services/notes.service'
+
 
 @Component({
   selector: 'app-notetaker',
@@ -11,37 +9,53 @@ class Note {
   styleUrls: ['./notetaker.component.css']
 })
 export class NotetakerComponent implements OnInit {
+  textbg = "blue";
+  // noteTittle: string = "";
+  // noteDesc: string = "";
 
-  constructor() { }
+  note: Notes = new Notes();
+  notesList: Array<Notes> = [];
+  constructor(private notesService: NotesService) { }
 
   ngOnInit(): void {
+    this.getAllNotes();
   }
-  textbg = "blue";
-  noteTittle: string = "";
-  noteDesc: string = "";
-  notesList: Array<Note> = [];
-  note: Note = new Note();
 
-  onChangeText(event: any) {
-    if (event.target.name == "txtnote") {
-      this.noteTittle = event.target.value;
-    }
-    else if (event.target.name == "txtdesc") {
-      this.noteDesc = event.target.value;
-    }
+
+  // onChangeText(event: any) {
+  //   if (event.target.name == "txtnote") {
+  //     this.noteTittle = event.target.value;
+  //   }
+  //   else if (event.target.name == "txtdesc") {
+  //     this.noteDesc = event.target.value;
+  //   }
+  // }
+
+  getAllNotes() {
+    this.notesService.getALlNotes()
+      .subscribe(resp => {
+        console.log(resp);
+        this.notesList= resp;
+
+      },
+        error => {
+          console.log(error);
+
+        })
   }
 
   addNotes() {
-    // console.log(this.noteTittle);
-    // console.log(this.noteDesc);
-    this.note.title = this.noteTittle;
-    this.note.desc = this.noteDesc;
+    console.log(this.note.title);
     this.notesList.push(this.note);
-    console.log(this.notesList);
+    this.notesService.addNotes(this.note)
+      .subscribe(resp => {
+        console.log(resp);
+      },
+        error => {
+          console.log(error);
 
-    this.noteTittle = "";
-    this.noteDesc = "";
-
+        })
+    this.note = new Notes();
   }
 
 }
