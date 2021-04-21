@@ -10,11 +10,13 @@ export class LoginComponent implements OnInit {
 
   constructor(private router:Router) { }
 
+
   ngOnInit(): void {
   }
 
-  login(){
-    this.router.navigateByUrl('/dashboard');
-  }
-
+  // login(){
+    
+  //   this.router.navigateByUrl('/dashboard');
+  // }
+ 
 }

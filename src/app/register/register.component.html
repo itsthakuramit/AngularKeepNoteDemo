@@ -1,1 +1,42 @@
-<p>register works!</p>
+<!-- Reactive Forms -->
+
+
+<form [formGroup]="registerForm">
+    <div>
+        <h2>New User Registration</h2>
+
+    </div>
+    <div>
+        <input type="text" formControlName="name" placeholder="Enter name">
+        <small>
+            {{getUserNameErrorMsg()}}
+        </small>
+    </div>
+    <div>
+        <input type="text" formControlName="email" placeholder="enter email">
+        <small>
+            <!-- {{getUserNameErrorMsg()}} -->
+        </small>
+    </div>
+    <div>
+        <input type="number" formControlName="mobile" placeholder="enter mobile number">
+        <small>
+            <!-- {{getUserNameErrorMsg()}} -->
+        </small>
+    </div>
+    <div>
+        <input type="password" formControlName="password" placeholder="enter password">
+        <small>
+            <!-- {{getUserNameErrorMsg()}} -->
+        </small>
+    </div>
+    <div>
+        <input type="password" formControlName="password" placeholder="Confirm ur password">
+        <small>
+            <!-- {{getUserNameErrorMsg()}} -->
+        </small>
+    </div>
+    <div>
+        <button (click)="register()">Add User</button>
+    </div>
+</form>

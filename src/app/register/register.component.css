@@ -1,0 +1,13 @@
+form{
+    margin: 50px 100px;
+}
+form div{
+    margin: 10px;
+
+}
+
+form input{
+background-color: beige;
+height: 5vh;
+width: 30vw;
+}

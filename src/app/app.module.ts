@@ -46,6 +46,7 @@ import { RegisterComponent } from './register/register.component';
     MatExpansionModule,
     MatCardModule, 
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [
