@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { Users } from '../models/users';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,6 +13,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  users: Users
 
   registerForm = new FormGroup({
 
@@ -34,6 +36,8 @@ export class RegisterComponent implements OnInit {
 
   register() {
     if (this.registerForm.valid) {
+      this.users = new Users();
+      this.users.name = this.registerForm.get('name').toString();
       alert("Registered User Succesfully")
     }
     else {

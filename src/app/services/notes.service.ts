@@ -1,16 +1,17 @@
 import { Injectable } from "@angular/core";
-import {HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { Notes } from "../models/notes";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class NotesService {
-  constructor( private httpClient:HttpClient){}
+  constructor(private httpClient: HttpClient) { }
 
-  addNotes(newNotes:Notes) {
+  addNotes(newNotes: Notes) {
     // http post
 
-    return this.httpClient.post<Notes>('http://localhost:3000/notes',newNotes);
-    
+    return this.httpClient.post<Notes>('http://localhost:3000/notes', newNotes);
+
   }
 
   getALlNotes() {

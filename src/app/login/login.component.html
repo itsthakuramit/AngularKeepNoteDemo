@@ -1,9 +1,12 @@
 <!-- Template drive Model -->
 
-<!-- <form (ngSubmit)="login(f)">
-    <input required minlength="6" type="text" placeholder="enter the UserName"/> 
+<form #myForm="ngForm" (ngSubmit)="login()">
+    <input class="form-Control" name="txtemail" required minlength="5" type="text" [(ngModel)]="users.email"
+        placeholder="enter the UserName" />
     <br>
-    <input required type="password" placeholder="enter the password">
+    
+    <input class="form-Control" name="txtpassword" required type="password" [(ngModel)]="users.password"
+        placeholder="enter the password">
     <br>
-    <button [disabled]="">login</button>
-</form> -->
+    <button [disabled]="!myForm.valid">login</button>
+</form>
