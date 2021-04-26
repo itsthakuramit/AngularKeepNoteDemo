@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotesService } from './services/notes.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { FaveComponent } from './fave/fave.component';
+import { ShareComponent } from './share/share.component';
 
 
 
@@ -34,7 +36,9 @@ import { RegisterComponent } from './register/register.component';
     DashboardComponent,
     NotetakerComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FaveComponent,
+    ShareComponent
   ],
   imports: [
     BrowserModule,

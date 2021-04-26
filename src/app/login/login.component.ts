@@ -24,11 +24,12 @@ export class LoginComponent implements OnInit {
     this.auth.username = this.users.email;
     this.auth.password = this.users.password;
     console.log(this.auth);
- 
+
     this.authService.validateUser(this.auth)
       .subscribe(data => {
         console.log(data['token']);
-
+        this.authService.setToken(data['token']);
+        this.router.navigateByUrl('/dashboard');
       },
         error => {
           console.log(error);
